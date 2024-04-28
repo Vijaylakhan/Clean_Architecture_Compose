@@ -9,9 +9,9 @@ ksp = "1.9.23-1.0.19"
 app = "8.3.2"
 core = "1.13.0"
 activityCompose = "1.9.0"
-bom = "2024.04.01"
+composeBom = "2024.04.01"
 navVersion = "2.7.7"
-hilt = "2.48.1"
+hilt = "2.49"
 roomDb = "2.6.1"
 retrofit = "2.11.0"
 okhttp = "4.12.0"
@@ -19,12 +19,15 @@ junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
 material = "1.11.0"
+hiltNew = "1.2.0"
+lifecycleCompose = "2.7.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
 activity = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 
-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "bom" }
+compose-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleCompose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 
 compose-ui = { group = "androidx.compose.ui", name = "ui" }
 compose-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
@@ -33,8 +36,9 @@ compose-material-iconsExtended = { group = "androidx.compose.material", name = "
 compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navVersion" }
 
-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNew" }
 
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomDb" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomDb" }
@@ -54,6 +58,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 
 [bundles]
 compose = [
+    "compose-lifecycle",
     "compose-ui",
     "compose-graphics",
     "compose-preview",
@@ -66,6 +71,10 @@ retrofit = [
     "retrofit-gson",
     "retrofit-okhttp"
 ]
+hilt = [
+    "hilt-android",
+    "hilt-navigation-compose"
+]
 
 
 [plugins]
@@ -74,3 +83,4 @@ application = { id = "com.android.application", version.ref = "app" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 library = { id = "com.android.library", version.ref = "app" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize",  version.ref = "kotlin"  }

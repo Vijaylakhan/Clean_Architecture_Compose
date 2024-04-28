@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
@@ -59,8 +60,8 @@ dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
     // hilt dependency
-    implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+    implementation(libs.bundles.hilt)
     // room database dependency
     implementation(libs.room.runtime)
 //    annotationProcessor(libs.room.compiler)
