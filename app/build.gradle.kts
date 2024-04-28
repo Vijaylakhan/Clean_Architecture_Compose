@@ -58,20 +58,25 @@ dependencies {
     // android core dependency
     implementation(libs.core.ktx)
     implementation(libs.activity)
+
     // kotlin collection
     implementation(libs.kotlin.collection)
+
     // compose dependency
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
+
     // hilt dependency
     ksp(libs.hilt.android.compiler)
     implementation(libs.bundles.hilt)
+
     // room database dependency
     implementation(libs.bundles.room)
-//    annotationProcessor(libs.room.compiler)
     ksp(libs.room.compiler)
+
     // retrofit dependency for network calls
     implementation(libs.bundles.retrofit)
+    
     // testing dependency
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
