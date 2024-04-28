@@ -5,5 +5,7 @@ import com.architecture.sample_core.utility.UpdateDataState
 import kotlinx.coroutines.flow.Flow
 
 interface EmployeeDataRepository {
-    suspend fun getEmployeeData(cacheData:Boolean = true) : Flow<UpdateDataState<List<EmployeeData>>>
+    suspend fun getEmployeeDbData() : Flow<List<EmployeeData>>
+    suspend fun getEmployeeNetworkData() : UpdateDataState<List<EmployeeData>>
+    suspend fun compareDataChange(previousData:List<EmployeeData>?, nextData:List<EmployeeData>):Boolean
 }

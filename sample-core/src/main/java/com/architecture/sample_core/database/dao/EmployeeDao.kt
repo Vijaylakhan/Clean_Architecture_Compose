@@ -6,6 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import com.architecture.sample_core.model.EmployeeData
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface EmployeeDao {
@@ -22,5 +23,5 @@ interface EmployeeDao {
     suspend fun deleteEmployeeData()
 
     @Query("select * from EmployeeData")
-    suspend fun getEmployeeData():List<EmployeeData>
+    fun getEmployeeData(): Flow<List<EmployeeData>>
 }

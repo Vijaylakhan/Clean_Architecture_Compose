@@ -46,6 +46,8 @@ dependencies {
     // android core dependency
     implementation(libs.core.ktx)
     implementation(libs.activity)
+    // kotlin collection
+    implementation(libs.kotlin.collection)
     // compose dependency
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
@@ -53,7 +55,7 @@ dependencies {
     ksp(libs.hilt.android.compiler)
     implementation(libs.bundles.hilt)
     // room database dependency
-    implementation(libs.room.runtime)
+    implementation(libs.bundles.room)
 //    annotationProcessor(libs.room.compiler)
     ksp(libs.room.compiler)
     // retrofit dependency for network calls

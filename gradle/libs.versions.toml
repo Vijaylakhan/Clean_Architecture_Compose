@@ -21,10 +21,12 @@ appcompat = "1.6.1"
 material = "1.11.0"
 hiltNew = "1.2.0"
 lifecycleCompose = "2.7.0"
+kotlinCollection = "0.3.7"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
 activity = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+kotlin-collection = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref =  "kotlinCollection" }
 
 compose-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleCompose" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -41,6 +43,7 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNew" }
 
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomDb" }
+room-kotlin-coroutines = { group = "androidx.room", name = "room-ktx", version.ref = "roomDb" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomDb" }
 
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
@@ -74,6 +77,10 @@ retrofit = [
 hilt = [
     "hilt-android",
     "hilt-navigation-compose"
+]
+room = [
+    "room-runtime",
+    "room-kotlin-coroutines"
 ]
 
 
