@@ -2,27 +2,27 @@ package com.architecture.sample_core.di.module
 
 import android.content.Context
 import androidx.room.Room
-import com.architecture.sample_core.database.AppDataBase
-import com.architecture.sample_core.network.NetworkService
-import com.architecture.sample_core.repository.EmployeeDataRepository
-import com.architecture.sample_core.repository.EmployeeDataRepositoryImpl
+import com.architecture.sample_core.data.localdatabase.AppDataBase
+import com.architecture.sample_core.data.network.NetworkService
+import com.architecture.sample_core.domain.repository.EmployeeDataRepository
+import com.architecture.sample_core.data.repositoryImp.EmployeeDataRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.scopes.ViewModelScoped
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 object SampleCoreModule {
 
     @Provides
-    @Singleton
+    @ViewModelScoped
     fun provideEmployeeRepository(
         appDataBase: AppDataBase,
         networkService: NetworkService
@@ -30,7 +30,7 @@ object SampleCoreModule {
 
 
     @Provides
-    @Singleton
+    @ViewModelScoped
     fun provideEmployeeDbClass(@ApplicationContext context: Context): AppDataBase {
         return Room.databaseBuilder(context,
             AppDataBase::class.java, "app_database")
@@ -38,7 +38,7 @@ object SampleCoreModule {
     }
 
     @Provides
-    @Singleton
+    @ViewModelScoped
     fun provideEmployeeNetworkClass(): NetworkService {
         return Retrofit.Builder().baseUrl("https://dummy.restapiexample.com/")
             .addConverterFactory(GsonConverterFactory.create())

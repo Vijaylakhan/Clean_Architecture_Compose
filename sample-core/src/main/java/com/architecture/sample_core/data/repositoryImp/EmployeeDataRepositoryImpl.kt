@@ -1,16 +1,13 @@
-package com.architecture.sample_core.repository
+package com.architecture.sample_core.data.repositoryImp
 
 import android.util.Log
-import androidx.compose.runtime.collectAsState
-import com.architecture.sample_core.database.AppDataBase
-import com.architecture.sample_core.model.EmployeeData
-import com.architecture.sample_core.network.NetworkService
+import com.architecture.sample_core.data.localdatabase.AppDataBase
+import com.architecture.sample_core.domain.model.EmployeeData
+import com.architecture.sample_core.data.network.NetworkService
+import com.architecture.sample_core.domain.repository.EmployeeDataRepository
 import com.architecture.sample_core.utility.UpdateDataState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.withContext
 import java.security.MessageDigest

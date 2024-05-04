@@ -1,4 +1,4 @@
-package com.architecture.sample_core.model
+package com.architecture.sample_core.domain.model
 import android.os.Parcelable
 import androidx.annotation.Keep
 import androidx.room.Entity

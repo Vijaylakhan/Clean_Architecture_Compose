@@ -1,11 +1,11 @@
-package com.architecture.sample_core.database.dao
+package com.architecture.sample_core.data.localdatabase.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
-import com.architecture.sample_core.model.EmployeeData
+import com.architecture.sample_core.domain.model.EmployeeData
 import kotlinx.coroutines.flow.Flow
 
 @Dao

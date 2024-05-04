@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.architecture.cleanarchitecture.ui.theme.CleanArchitectureTheme
-import com.architecture.sample_core.composable.MainComposable
+import com.architecture.sample_core.presentaion.composable.MainComposable
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

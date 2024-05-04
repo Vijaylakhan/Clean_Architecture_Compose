@@ -1,6 +1,6 @@
-package com.architecture.sample_core.network
+package com.architecture.sample_core.data.network
 
-import com.architecture.sample_core.model.EmployeeResponse
+import com.architecture.sample_core.domain.model.EmployeeResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers

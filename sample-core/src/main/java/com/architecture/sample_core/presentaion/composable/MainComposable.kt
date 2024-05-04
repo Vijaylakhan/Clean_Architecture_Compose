@@ -1,4 +1,4 @@
-package com.architecture.sample_core.composable
+package com.architecture.sample_core.presentaion.composable
 
 
 import androidx.compose.foundation.layout.Box
@@ -17,15 +17,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.fastForEach
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.architecture.sample_core.model.EmployeeData
+import com.architecture.sample_core.domain.model.EmployeeData
 import com.architecture.sample_core.utility.UpdateDataState
-import com.architecture.sample_core.viewmodel.BaseViewModel
+import com.architecture.sample_core.presentaion.viewmodel.HomeViewModel
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 fun MainComposable(){
-    val viewModel = hiltViewModel<BaseViewModel>()
+    val viewModel = hiltViewModel<HomeViewModel>()
     val uiState = viewModel.employeeUiState.collectAsStateWithLifecycle()
     when(uiState.value){
         is UpdateDataState.Success -> {

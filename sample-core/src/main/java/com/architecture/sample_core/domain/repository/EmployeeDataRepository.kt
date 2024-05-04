@@ -1,6 +1,6 @@
-package com.architecture.sample_core.repository
+package com.architecture.sample_core.domain.repository
 
-import com.architecture.sample_core.model.EmployeeData
+import com.architecture.sample_core.domain.model.EmployeeData
 import com.architecture.sample_core.utility.UpdateDataState
 import kotlinx.coroutines.flow.Flow
 
